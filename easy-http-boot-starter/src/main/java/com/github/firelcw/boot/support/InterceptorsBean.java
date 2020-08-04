@@ -1,4 +1,4 @@
-package com.github.firelcw.support;
+package com.github.firelcw.boot.support;
 
 import com.github.firelcw.interceptor.HttpInterceptor;
 

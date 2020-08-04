@@ -2,5 +2,5 @@ server:
   port: 8889
 
 easy-http:
-  base-package: com.github.firelcw.service
+  base-package: com.github.firelcw.boot.service
   base-endpoint: 127.0.0.1:8888

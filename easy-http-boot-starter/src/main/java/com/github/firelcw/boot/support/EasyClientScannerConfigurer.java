@@ -1,6 +1,6 @@
-package com.github.firelcw.support;
+package com.github.firelcw.boot.support;
 
-import com.github.firelcw.annotation.EasyClient;
+import com.github.firelcw.boot.annotation.EasyHttpClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
@@ -23,7 +23,7 @@ public class EasyClientScannerConfigurer implements BeanDefinitionRegistryPostPr
 
     private static final Logger log = LoggerFactory.getLogger(EasyClientScannerConfigurer.class);
     private String basePackage;
-    private static final Class<? extends Annotation> markedAnnotation = EasyClient.class;
+    private static final Class<? extends Annotation> markedAnnotation = EasyHttpClient.class;
 
     @Override
     public void postProcessBeanDefinitionRegistry(BeanDefinitionRegistry definitionRegistry) {

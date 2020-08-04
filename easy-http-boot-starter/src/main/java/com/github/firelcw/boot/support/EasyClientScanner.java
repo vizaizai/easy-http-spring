@@ -1,4 +1,4 @@
-package com.github.firelcw.support;
+package com.github.firelcw.boot.support;
 
 import org.springframework.beans.factory.annotation.AnnotatedBeanDefinition;
 import org.springframework.beans.factory.config.BeanDefinition;

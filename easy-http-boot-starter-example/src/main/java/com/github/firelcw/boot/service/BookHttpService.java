@@ -1,8 +1,9 @@
-package com.github.firelcw.service;
+package com.github.firelcw.boot.service;
 
 import com.github.firelcw.annotation.*;
-import com.github.firelcw.model.ApiResult;
-import com.github.firelcw.model.Book;
+import com.github.firelcw.boot.annotation.EasyHttpClient;
+import com.github.firelcw.boot.model.ApiResult;
+import com.github.firelcw.boot.model.Book;
 
 import java.util.List;
 import java.util.Map;
@@ -11,7 +12,7 @@ import java.util.Map;
  * @author liaochongwei
  * @date 2020/8/3 10:27
  */
-@EasyClient(interceptors = Object.class, decoder = Object.class)
+@EasyHttpClient
 public interface BookHttpService {
 
     @Get("/books/{id}")

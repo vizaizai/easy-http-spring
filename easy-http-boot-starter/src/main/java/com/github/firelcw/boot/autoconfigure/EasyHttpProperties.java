@@ -1,4 +1,4 @@
-package com.github.firelcw.autoconfigure;
+package com.github.firelcw.boot.autoconfigure;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

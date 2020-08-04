@@ -1,4 +1,4 @@
-package com.github.firelcw.autoconfigure;
+package com.github.firelcw.boot.autoconfigure;
 
 import com.github.firelcw.codec.Decoder;
 import com.github.firelcw.codec.DefaultDecoder;
@@ -7,7 +7,7 @@ import com.github.firelcw.codec.Encoder;
 import com.github.firelcw.interceptor.ErrorInterceptor;
 import com.github.firelcw.interceptor.TimeInterceptor;
 import com.github.firelcw.model.HttpRequestConfig;
-import com.github.firelcw.support.InterceptorsBean;
+import com.github.firelcw.boot.support.InterceptorsBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -22,8 +22,8 @@ import org.springframework.context.annotation.Configuration;
 public class EasyHttpAutoConfiguration {
 
 
-    @ConditionalOnMissingBean
-    @Bean
+
+    @Bean("defaultDecoder")
     Decoder decoder() {
         return new DefaultDecoder();
     }

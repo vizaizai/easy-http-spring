@@ -1,7 +1,7 @@
-package com.github.firelcw.annotation;
+package com.github.firelcw.boot.annotation;
 
 
-import com.github.firelcw.support.EasyClientSelector;
+import com.github.firelcw.boot.support.EasyClientSelector;
 import org.springframework.context.annotation.Import;
 
 import java.lang.annotation.*;

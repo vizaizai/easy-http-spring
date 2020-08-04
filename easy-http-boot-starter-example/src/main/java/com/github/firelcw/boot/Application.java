@@ -1,6 +1,6 @@
-package com.github.firelcw;
+package com.github.firelcw.boot;
 
-import com.github.firelcw.annotation.EnableEasyHttp;
+import com.github.firelcw.boot.annotation.EnableEasyHttp;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
