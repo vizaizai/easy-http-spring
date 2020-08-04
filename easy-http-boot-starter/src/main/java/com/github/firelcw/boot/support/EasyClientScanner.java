@@ -25,7 +25,7 @@ public class EasyClientScanner extends ClassPathBeanDefinitionScanner {
     /**
      * 默认情况下只有顶层具体类才会通过
      * @param beanDefinition
-     * @return
+     * @return boolean
      */
     @Override
     protected boolean isCandidateComponent(AnnotatedBeanDefinition beanDefinition) {
