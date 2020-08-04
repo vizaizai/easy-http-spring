@@ -10,6 +10,6 @@
     <version>1.0.0</version>
     <modules>
         <module>easy-http-boot-starter</module>
-        <module>esay-http-boot-starter-simple</module>
+        <module>easy-http-boot-starter-example</module>
     </modules>
 </project>
