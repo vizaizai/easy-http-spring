@@ -5,7 +5,7 @@
     <parent>
         <artifactId>easy-http-spring</artifactId>
         <groupId>com.github.firelcw</groupId>
-        <version>1.0.0</version>
+        <version>1.1.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -48,10 +48,10 @@
     <properties>
         <spring.boot.version>2.1.6.RELEASE</spring.boot.version>
         <java.version>1.8</java.version>
-        <easy.http.version>1.0.0</easy.http.version>
+        <easy.http.version>1.1.0</easy.http.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <gpg.passphrase>easyhttpboot123</gpg.passphrase>
+        <gpg.passphrase>easyhttp123</gpg.passphrase>
         <!-- gpg.exe的绝对路径，在gpg安装目录下的bin目录中 -->
         <gpg.executable>C:\Program Files (x86)\gnupg\bin\gpg.exe</gpg.executable>
         <!-- 上一步执行gpg - -list-key命令输出的路径，一般在C:\User\当前用户\AppData\Roaming\gnupg -->
