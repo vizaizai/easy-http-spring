@@ -3,4 +3,6 @@ server:
 
 easy-http:
   base-package: com.github.firelcw.boot.service
-  base-endpoint: 127.0.0.1:8888
+#  base-endpoint: 127.0.0.1:8888
+  base-endpoints:
+    book: 127.0.0.1:8888

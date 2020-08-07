@@ -4,6 +4,7 @@ import com.github.firelcw.annotation.*;
 import com.github.firelcw.boot.annotation.EasyHttpClient;
 import com.github.firelcw.boot.model.ApiResult;
 import com.github.firelcw.boot.model.Book;
+import com.github.firelcw.interceptor.TimeInterceptor;
 
 import java.util.List;
 import java.util.Map;
@@ -12,7 +13,7 @@ import java.util.Map;
  * @author liaochongwei
  * @date 2020/8/3 10:27
  */
-@EasyHttpClient
+@EasyHttpClient(value = "book", interceptors = TimeInterceptor.class, decoderName = "myDecoder")
 public interface BookHttpService {
 
     @Get("/books/{id}")
