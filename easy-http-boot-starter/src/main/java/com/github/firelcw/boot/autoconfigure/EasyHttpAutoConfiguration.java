@@ -41,7 +41,6 @@ public class EasyHttpAutoConfiguration {
     HttpRequestConfig config(EasyHttpProperties properties) {
         HttpRequestConfig config = new HttpRequestConfig();
         config.setConnectTimeout(properties.getConnectTimeout());
-        config.setConnectionRequestTimeout(properties.getConnectionRequestTimeout());
         config.setSocketTimeout(properties.getSocketTimeout());
         return config;
     }

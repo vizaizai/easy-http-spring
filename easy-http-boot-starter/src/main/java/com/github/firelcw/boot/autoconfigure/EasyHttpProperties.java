@@ -31,10 +31,6 @@ public class EasyHttpProperties {
     /**
      * 请求超时时间
      */
-    private Integer connectionRequestTimeout = 5000;
-    /**
-     * 套接字超时时间
-     */
     private Integer socketTimeout = 5000;
 
 
@@ -68,14 +64,6 @@ public class EasyHttpProperties {
 
     public void setConnectTimeout(Integer connectTimeout) {
         this.connectTimeout = connectTimeout;
-    }
-
-    public Integer getConnectionRequestTimeout() {
-        return connectionRequestTimeout;
-    }
-
-    public void setConnectionRequestTimeout(Integer connectionRequestTimeout) {
-        this.connectionRequestTimeout = connectionRequestTimeout;
     }
 
     public Integer getSocketTimeout() {
