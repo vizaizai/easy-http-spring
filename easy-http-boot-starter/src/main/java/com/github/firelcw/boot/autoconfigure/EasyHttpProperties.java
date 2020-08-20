@@ -31,7 +31,7 @@ public class EasyHttpProperties {
     /**
      * 请求超时时间
      */
-    private Integer socketTimeout = 5000;
+    private Integer requestTimeout = 15000;
 
 
     public String getBasePackage() {
@@ -66,11 +66,11 @@ public class EasyHttpProperties {
         this.connectTimeout = connectTimeout;
     }
 
-    public Integer getSocketTimeout() {
-        return socketTimeout;
+    public Integer getRequestTimeout() {
+        return requestTimeout;
     }
 
-    public void setSocketTimeout(Integer socketTimeout) {
-        this.socketTimeout = socketTimeout;
+    public void setRequestTimeout(Integer requestTimeout) {
+        this.requestTimeout = requestTimeout;
     }
 }

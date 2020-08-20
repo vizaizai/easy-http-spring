@@ -1,8 +1,8 @@
 package com.github.firelcw.boot.support;
 
+import com.github.firelcw.EasyHttp;
 import com.github.firelcw.boot.annotation.EasyHttpClient;
 import com.github.firelcw.boot.autoconfigure.EasyHttpProperties;
-import com.github.firelcw.client.EasyHttp;
 import com.github.firelcw.codec.Decoder;
 import com.github.firelcw.codec.Encoder;
 import com.github.firelcw.interceptor.HttpInterceptor;
