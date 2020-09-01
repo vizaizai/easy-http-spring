@@ -5,7 +5,7 @@
     <parent>
         <artifactId>easy-http-spring</artifactId>
         <groupId>com.github.firelcw</groupId>
-        <version>1.2.0</version>
+        <version>1.3.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -48,7 +48,7 @@
     <properties>
         <spring.boot.version>2.1.6.RELEASE</spring.boot.version>
         <java.version>1.8</java.version>
-        <easy.http.version>1.6.0</easy.http.version>
+        <easy.http.version>2.0.1</easy.http.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <gpg.passphrase>easyhttp123</gpg.passphrase>
