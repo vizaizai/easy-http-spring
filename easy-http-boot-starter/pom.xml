@@ -5,57 +5,17 @@
     <parent>
         <artifactId>easy-http-spring</artifactId>
         <groupId>com.github.firelcw</groupId>
-        <version>1.3.0</version>
+        <version>1.3.2</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>easy-http-boot-starter</artifactId>
     <packaging>jar</packaging>
     <name>easy-http-boot-starter</name>
-    <url>https://github.com/firelcw/easy-http-spring</url>
-    <description>Springboot starter for easy-http</description>
-
-    <contributors>
-        <contributor>
-            <name>Liao Chongwei</name>
-            <email>liaochongwei666@163.com</email>
-        </contributor>
-    </contributors>
-
-    <licenses>
-        <license>
-            <name>The Apache Software License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-            <distribution>repo</distribution>
-        </license>
-    </licenses>
-
-    <developers>
-        <developer>
-            <name>Liao Chongwei</name>
-            <email>liaochongwei666@163.com</email>
-            <organization>https://github.com/firelcw</organization>
-        </developer>
-    </developers>
-
-    <scm>
-        <url>https://github.com/firelcw/easy-http-spring</url>
-        <connection>https://github.com/firelcw/easy-http-spring.git</connection>
-        <developerConnection>https://github.com/firelcw</developerConnection>
-    </scm>
-
 
     <properties>
         <spring.boot.version>2.1.6.RELEASE</spring.boot.version>
-        <java.version>1.8</java.version>
         <easy.http.version>2.0.1</easy.http.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
-        <gpg.passphrase>easyhttp123</gpg.passphrase>
-        <!-- gpg.exe的绝对路径，在gpg安装目录下的bin目录中 -->
-        <gpg.executable>C:\Program Files (x86)\gnupg\bin\gpg.exe</gpg.executable>
-        <!-- 上一步执行gpg - -list-key命令输出的路径，一般在C:\User\当前用户\AppData\Roaming\gnupg -->
-        <gpg.homedir>C:\Users\dell\AppData\Roaming\gnupg</gpg.homedir>
     </properties>
 
     <dependencies>
@@ -77,81 +37,5 @@
             <version>${spring.boot.version}</version>
         </dependency>
     </dependencies>
-
-    <profiles>
-        <profile>
-            <id>default</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-compiler-plugin</artifactId>
-                        <version>3.8.1</version>
-                        <configuration>
-                            <source>${java.version}</source>
-                            <target>${java.version}</target>
-                            <encoding>UTF-8</encoding>
-                        </configuration>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-source-plugin</artifactId>
-                        <version>2.2.1</version>
-                        <executions>
-                            <execution>
-                                <phase>package</phase>
-                                <goals>
-                                    <goal>jar-no-fork</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>2.9.1</version>
-                        <executions>
-                            <execution>
-                                <id>attach-javadocs</id>
-                                <phase>package</phase>
-                                <goals>
-                                    <goal>jar</goal>
-                                </goals>
-                                <configuration>
-                                    <additionalparam>-Xdoclint:none</additionalparam>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-gpg-plugin</artifactId>
-                        <version>1.6</version>
-                        <executions>
-                            <execution>
-                                <phase>verify</phase>
-                                <goals>
-                                    <goal>sign</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-            <distributionManagement>
-                <snapshotRepository>
-                    <id>ossrh</id>
-                    <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-                </snapshotRepository>
-                <repository>
-                    <id>ossrh</id>
-                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-                </repository>
-            </distributionManagement>
-        </profile>
-    </profiles>
 
 </project>
