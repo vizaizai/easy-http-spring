@@ -3,6 +3,7 @@ package com.github.firelcw.boot.support;
 import com.github.firelcw.EasyHttp;
 import com.github.firelcw.boot.annotation.EasyHttpClient;
 import com.github.firelcw.boot.autoconfigure.EasyHttpProperties;
+import com.github.firelcw.client.AbstractClient;
 import com.github.firelcw.codec.Decoder;
 import com.github.firelcw.codec.Encoder;
 import com.github.firelcw.interceptor.HttpInterceptor;
@@ -26,6 +27,7 @@ public class EasyClientFactoryBean<T> implements FactoryBean<T>, ApplicationCont
     private T target;
     private Encoder encoder;
     private Decoder decoder;
+    private AbstractClient client;
     private HttpRequestConfig requestConfig;
     private EasyHttpProperties properties;
     private InterceptorsBean interceptorsBean;
@@ -57,6 +59,7 @@ public class EasyClientFactoryBean<T> implements FactoryBean<T>, ApplicationCont
                 throw new BeanInitializationException("the value '" + value +"'is not exists in easy-http.baseEndpoints");
             }
         }
+
         EasyHttp.Builder builder = EasyHttp.builder()
                                         .encoder(encoder)
                                         .config(requestConfig)
@@ -72,10 +75,19 @@ public class EasyClientFactoryBean<T> implements FactoryBean<T>, ApplicationCont
             builder.withInterceptor(interceptor);
         }
 
+        //注解上的客户端
+        if (!annotation.client().equals(AbstractClient.class)) {
+            AbstractClient annClient = this.applicationContext.getBean(annotation.client());
+            Assert.notNull(annClient,"not found a bean:" + annotation.client().getSimpleName());
+            builder.client(annClient);
+        }else {
+            builder.client(this.client);
+        }
+
         // 注解上的解码器
-        if (StringUtils.isNotBlank(annotation.decoderName())) {
-            Decoder annDecoder = this.applicationContext.getBean(annotation.decoderName(), Decoder.class);
-            Assert.notNull(annDecoder,"not found a bean named " + annotation.decoderName());
+        if (!annotation.decoder().equals(Decoder.class)) {
+            Decoder annDecoder = this.applicationContext.getBean(annotation.decoder());
+            Assert.notNull(annDecoder,"not found a bean:" + annotation.decoder().getSimpleName());
             builder.decoder(annDecoder);
         }else {
             builder.decoder(this.decoder);
@@ -108,6 +120,7 @@ public class EasyClientFactoryBean<T> implements FactoryBean<T>, ApplicationCont
         this.applicationContext = applicationContext;
         this.decoder = applicationContext.getBean(Decoder.class);
         this.encoder = applicationContext.getBean(Encoder.class);
+        this.client = applicationContext.getBean(AbstractClient.class);
         this.requestConfig = applicationContext.getBean(HttpRequestConfig.class);
         this.properties = applicationContext.getBean(EasyHttpProperties.class);
         this.interceptorsBean = applicationContext.getBean(InterceptorsBean.class);

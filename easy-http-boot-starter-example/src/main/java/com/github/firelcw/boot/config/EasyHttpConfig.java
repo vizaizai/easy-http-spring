@@ -1,5 +1,7 @@
 package com.github.firelcw.boot.config;
 
+import com.github.firelcw.client.AbstractClient;
+import com.github.firelcw.client.DefaultURLClient;
 import com.github.firelcw.codec.Decoder;
 import com.github.firelcw.codec.DefaultDecoder;
 import org.springframework.context.annotation.Bean;
@@ -12,8 +14,13 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class EasyHttpConfig {
 
-    @Bean("myDecoder")
-    Decoder decoder() {
+    @Bean
+    Decoder myDecoder() {
         return new DefaultDecoder();
+    }
+
+    @Bean
+    AbstractClient client() {
+        return DefaultURLClient.getInstance();
     }
 }

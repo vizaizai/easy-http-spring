@@ -1,5 +1,8 @@
 package com.github.firelcw.boot.annotation;
 
+import com.github.firelcw.client.AbstractClient;
+import com.github.firelcw.client.ApacheHttpClient;
+import com.github.firelcw.codec.Decoder;
 import com.github.firelcw.interceptor.HttpInterceptor;
 
 import java.lang.annotation.*;
@@ -22,10 +25,14 @@ public @interface EasyHttpClient {
     Class<? extends HttpInterceptor>[] interceptors() default {};
     /**
      *
-     * @return 解码器名称，将覆盖全局的解码器(需先配置解码器)
+     * @return 解码器类型
      */
-    String decoderName() default "";
+    Class<? extends Decoder> decoder() default Decoder.class;
 
+    /**
+     * @return 请求客户端类型
+     */
+    Class<? extends AbstractClient> client() default AbstractClient.class;
 
 
 
