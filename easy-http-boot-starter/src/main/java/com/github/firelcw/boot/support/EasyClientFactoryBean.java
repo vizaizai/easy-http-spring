@@ -50,9 +50,6 @@ public class EasyClientFactoryBean<T> implements FactoryBean<T>, ApplicationCont
         // 使用默认url
         if (StringUtils.isBlank(value)) {
             url = properties.getBaseEndpoint();
-            if (StringUtils.isBlank(url)) {
-                throw new BeanInitializationException("the value is not exists in easy-http.baseEndpoint");
-            }
         }else {
             url = properties.getBaseEndpoints().get(value);
             if (StringUtils.isBlank(url)) {

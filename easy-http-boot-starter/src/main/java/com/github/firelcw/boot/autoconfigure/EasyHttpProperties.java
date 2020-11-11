@@ -19,7 +19,7 @@ public class EasyHttpProperties {
     /**
      * 基本路径
      */
-    private String baseEndpoint = "localhost";
+    private String baseEndpoint;
     /**
      * 基本路径列表
      */
