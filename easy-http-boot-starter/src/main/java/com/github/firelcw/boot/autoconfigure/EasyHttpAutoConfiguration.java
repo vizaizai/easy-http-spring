@@ -8,7 +8,7 @@ import com.github.firelcw.codec.DefaultDecoder;
 import com.github.firelcw.codec.DefaultEncoder;
 import com.github.firelcw.codec.Encoder;
 import com.github.firelcw.interceptor.ErrorInterceptor;
-import com.github.firelcw.interceptor.TimeInterceptor;
+import com.github.firelcw.interceptor.LogInterceptor;
 import com.github.firelcw.model.HttpRequestConfig;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -54,7 +54,7 @@ public class EasyHttpAutoConfiguration {
     @Bean
     InterceptorsBean interceptorsBean() {
         InterceptorsBean interceptorsBean = new InterceptorsBean();
-        interceptorsBean.addInterceptor(new TimeInterceptor());
+        interceptorsBean.addInterceptor(new LogInterceptor());
         interceptorsBean.addInterceptor(new ErrorInterceptor());
         return interceptorsBean;
     }
