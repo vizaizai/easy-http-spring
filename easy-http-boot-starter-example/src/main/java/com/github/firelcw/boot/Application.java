@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date 2020/8/3 18:25
  */
 @SpringBootApplication
-@EnableEasyHttp
+@EnableEasyHttp("com.github.firelcw.boot.service")
 public class Application {
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);

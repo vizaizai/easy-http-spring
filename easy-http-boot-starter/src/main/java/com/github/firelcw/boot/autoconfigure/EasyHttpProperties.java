@@ -13,10 +13,6 @@ import java.util.Map;
 )
 public class EasyHttpProperties {
     /**
-     * 扫描包
-     */
-    private String basePackage;
-    /**
      * 基本路径
      */
     private String baseEndpoint;
@@ -33,14 +29,6 @@ public class EasyHttpProperties {
      */
     private Integer requestTimeout = 15000;
 
-
-    public String getBasePackage() {
-        return basePackage;
-    }
-
-    public void setBasePackage(String basePackage) {
-        this.basePackage = basePackage;
-    }
 
     public String getBaseEndpoint() {
         return baseEndpoint;
