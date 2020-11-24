@@ -5,3 +5,9 @@ easy-http:
 #  base-endpoint: 127.0.0.1:8888
   base-endpoints:
     book: 127.0.0.1:8888
+
+
+logging:
+  level:
+    root: info
+    com.github.firelcw: debug

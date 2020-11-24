@@ -20,7 +20,7 @@ import java.util.Map;
 public interface BookHttpService {
 
     @Get("/books/{id}")
-    ApiResult<Book> getBookById(@Var("id") String id);
+    ApiResult<Book> getBookById(@Var String id);
 
     @Get("/books?author={author}")
     ApiResult<List<Book>> listBooksByAuthor(@Var("author") String author);
