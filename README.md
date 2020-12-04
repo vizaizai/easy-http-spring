@@ -16,7 +16,7 @@
 <dependency>
   <groupId>com.github.firelcw</groupId>
   <artifactId>easy-http-boot-starter</artifactId>
-  <version>1.3.9</version>
+  <version>1.4.0</version>
 </dependency>
    ```
 

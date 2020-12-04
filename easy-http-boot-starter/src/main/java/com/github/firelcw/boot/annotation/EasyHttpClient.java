@@ -1,7 +1,6 @@
 package com.github.firelcw.boot.annotation;
 
 import com.github.firelcw.client.AbstractClient;
-import com.github.firelcw.client.ApacheHttpClient;
 import com.github.firelcw.codec.Decoder;
 import com.github.firelcw.interceptor.HttpInterceptor;
 
