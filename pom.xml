@@ -4,12 +4,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.firelcw</groupId>
+    <groupId>com.github.vizaizai</groupId>
     <artifactId>easy-http-spring</artifactId>
     <packaging>pom</packaging>
-    <version>1.4.0</version>
+    <version>1.5.0</version>
     <name>easy-http-spring</name>
-    <url>https://github.com/firelcw/easy-http-spring</url>
+    <url>https://github.com/vizaizai/easy-http-spring</url>
     <description>Springboot starter for easy-http</description>
 
     <modules>
@@ -36,14 +36,14 @@
         <developer>
             <name>Liao Chongwei</name>
             <email>liaochongwei666@163.com</email>
-            <organization>https://github.com/firelcw</organization>
+            <organization>https://github.com/vizaizai</organization>
         </developer>
     </developers>
 
     <scm>
-        <url>https://github.com/firelcw/easy-http-spring</url>
-        <connection>https://github.com/firelcw/easy-http-spring.git</connection>
-        <developerConnection>https://github.com/firelcw</developerConnection>
+        <url>https://github.com/vizaizai/easy-http-spring</url>
+        <connection>https://github.com/vizaizai/easy-http-spring.git</connection>
+        <developerConnection>https://github.com/vizaizai</developerConnection>
     </scm>
 
 

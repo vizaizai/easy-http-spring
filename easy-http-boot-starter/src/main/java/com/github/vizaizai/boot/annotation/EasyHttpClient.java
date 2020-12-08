@@ -1,8 +1,8 @@
-package com.github.firelcw.boot.annotation;
+package com.github.vizaizai.boot.annotation;
 
-import com.github.firelcw.client.AbstractClient;
-import com.github.firelcw.codec.Decoder;
-import com.github.firelcw.interceptor.HttpInterceptor;
+import com.github.vizaizai.client.AbstractClient;
+import com.github.vizaizai.codec.Decoder;
+import com.github.vizaizai.interceptor.HttpInterceptor;
 
 import java.lang.annotation.*;
 

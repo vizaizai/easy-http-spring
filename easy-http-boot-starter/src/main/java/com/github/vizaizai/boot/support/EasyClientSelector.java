@@ -1,6 +1,6 @@
-package com.github.firelcw.boot.support;
+package com.github.vizaizai.boot.support;
 
-import com.github.firelcw.boot.annotation.EnableEasyHttp;
+import com.github.vizaizai.boot.annotation.EnableEasyHttp;
 import org.apache.commons.collections.MapUtils;
 import org.springframework.context.annotation.ImportSelector;
 import org.springframework.core.type.AnnotationMetadata;

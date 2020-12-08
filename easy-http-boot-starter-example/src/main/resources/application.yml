@@ -10,4 +10,4 @@ easy-http:
 logging:
   level:
     root: info
-    com.github.firelcw: debug
+    com.github.vizaizai: debug

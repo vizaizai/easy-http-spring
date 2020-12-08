@@ -1,6 +1,6 @@
-package com.github.firelcw.boot;
+package com.github.vizaizai.boot;
 
-import com.github.firelcw.boot.annotation.EnableEasyHttp;
+import com.github.vizaizai.boot.annotation.EnableEasyHttp;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date 2020/8/3 18:25
  */
 @SpringBootApplication
-@EnableEasyHttp("com.github.firelcw.boot.service")
+@EnableEasyHttp("com.github.vizaizai.boot.service")
 public class Application {
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);

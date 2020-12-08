@@ -1,15 +1,15 @@
-package com.github.firelcw.boot.autoconfigure;
+package com.github.vizaizai.boot.autoconfigure;
 
-import com.github.firelcw.boot.support.InterceptorsBean;
-import com.github.firelcw.client.AbstractClient;
-import com.github.firelcw.client.ApacheHttpClient;
-import com.github.firelcw.codec.Decoder;
-import com.github.firelcw.codec.DefaultDecoder;
-import com.github.firelcw.codec.DefaultEncoder;
-import com.github.firelcw.codec.Encoder;
-import com.github.firelcw.interceptor.ErrorInterceptor;
-import com.github.firelcw.interceptor.LogInterceptor;
-import com.github.firelcw.model.HttpRequestConfig;
+import com.github.vizaizai.boot.support.InterceptorsBean;
+import com.github.vizaizai.client.AbstractClient;
+import com.github.vizaizai.client.ApacheHttpClient;
+import com.github.vizaizai.codec.Decoder;
+import com.github.vizaizai.codec.DefaultDecoder;
+import com.github.vizaizai.codec.DefaultEncoder;
+import com.github.vizaizai.codec.Encoder;
+import com.github.vizaizai.interceptor.ErrorInterceptor;
+import com.github.vizaizai.interceptor.LogInterceptor;
+import com.github.vizaizai.model.HttpRequestConfig;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;

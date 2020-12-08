@@ -1,7 +1,7 @@
-package com.github.firelcw.boot.support;
+package com.github.vizaizai.boot.support;
 
-import com.github.firelcw.exception.EasyHttpException;
-import com.github.firelcw.interceptor.HttpInterceptor;
+import com.github.vizaizai.exception.EasyHttpException;
+import com.github.vizaizai.interceptor.HttpInterceptor;
 
 import java.util.ArrayList;
 import java.util.Collections;

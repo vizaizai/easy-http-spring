@@ -8,19 +8,19 @@
 
 | 项目 | easy-http-boot | spring-boot |
 | ---- | -------------- | ----------- |
-| 版本 | 1.X            | 2.1.X       |
+| 版本 | 1.X            | 2.1.X+       |
 
 ##### 2. 安装
 
    ``` xml
 <dependency>
-  <groupId>com.github.firelcw</groupId>
+  <groupId>com.github.vizaizai</groupId>
   <artifactId>easy-http-boot-starter</artifactId>
-  <version>1.4.0</version>
+  <version>1.5.0</version>
 </dependency>
    ```
 
-普通版请移步: [easy-http](https://github.com/firelcw/easy-http)
+普通版请移步: [easy-http](https://github.com/vizaizai/easy-http)
 
 ##### 3. 开始
 
@@ -28,7 +28,7 @@
 
 ``` yaml
 easy-http:
-  base-package: com.github.firelcw.**.service #接口所在的包
+  base-package: com.github.vizaizai.**.service #接口所在的包
 #  base-endpoint: 127.0.0.1:8080 默认请求地址
   base-endpoints: #按客户端名字定义请求地址。如@EasyHttpClient(value = "book"),这个接口将使用127.0.0.1:8888
     book: 127.0.0.1:8888
@@ -61,7 +61,7 @@ private BookHttpService bookHttpService;
 ```
 
 ##### 4. 核心用法
-请移步: [easy-http](https://github.com/firelcw/easy-http)
+请移步: [easy-http](https://github.com/vizaizai/easy-http)
 
 
 #### 联系作者

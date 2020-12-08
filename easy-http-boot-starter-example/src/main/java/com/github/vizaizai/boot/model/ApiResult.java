@@ -1,4 +1,4 @@
-package com.github.firelcw.boot.model;
+package com.github.vizaizai.boot.model;
 
 /**
  * @author liaochongwei

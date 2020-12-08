@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>easy-http-spring</artifactId>
-        <groupId>com.github.firelcw</groupId>
-        <version>1.4.0</version>
+        <groupId>com.github.vizaizai</groupId>
+        <version>1.5.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -15,12 +15,12 @@
 
     <properties>
         <spring.boot.version>2.1.6.RELEASE</spring.boot.version>
-        <easy.http.version>2.2.0</easy.http.version>
+        <easy.http.version>3.0.0</easy.http.version>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>com.github.firelcw</groupId>
+            <groupId>com.github.vizaizai</groupId>
             <artifactId>easy-http</artifactId>
             <version>${easy.http.version}</version>
         </dependency>

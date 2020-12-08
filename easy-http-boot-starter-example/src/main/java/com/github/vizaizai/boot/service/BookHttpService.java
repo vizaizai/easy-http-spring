@@ -1,12 +1,12 @@
-package com.github.firelcw.boot.service;
+package com.github.vizaizai.boot.service;
 
-import com.github.firelcw.annotation.*;
-import com.github.firelcw.boot.annotation.EasyHttpClient;
-import com.github.firelcw.boot.model.ApiResult;
-import com.github.firelcw.boot.model.Book;
-import com.github.firelcw.client.DefaultURLClient;
-import com.github.firelcw.codec.DefaultDecoder;
-import com.github.firelcw.interceptor.LogInterceptor;
+import com.github.vizaizai.annotation.*;
+import com.github.vizaizai.boot.annotation.EasyHttpClient;
+import com.github.vizaizai.boot.model.ApiResult;
+import com.github.vizaizai.boot.model.Book;
+import com.github.vizaizai.client.DefaultURLClient;
+import com.github.vizaizai.codec.DefaultDecoder;
+import com.github.vizaizai.interceptor.LogInterceptor;
 
 import java.util.List;
 import java.util.Map;

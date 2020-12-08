@@ -1,13 +1,13 @@
-package com.github.firelcw.boot.support;
+package com.github.vizaizai.boot.support;
 
-import com.github.firelcw.EasyHttp;
-import com.github.firelcw.boot.annotation.EasyHttpClient;
-import com.github.firelcw.boot.autoconfigure.EasyHttpProperties;
-import com.github.firelcw.client.AbstractClient;
-import com.github.firelcw.codec.Decoder;
-import com.github.firelcw.codec.Encoder;
-import com.github.firelcw.interceptor.HttpInterceptor;
-import com.github.firelcw.model.HttpRequestConfig;
+import com.github.vizaizai.EasyHttp;
+import com.github.vizaizai.boot.annotation.EasyHttpClient;
+import com.github.vizaizai.boot.autoconfigure.EasyHttpProperties;
+import com.github.vizaizai.client.AbstractClient;
+import com.github.vizaizai.codec.Decoder;
+import com.github.vizaizai.codec.Encoder;
+import com.github.vizaizai.interceptor.HttpInterceptor;
+import com.github.vizaizai.model.HttpRequestConfig;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.BeanInitializationException;
 import org.springframework.beans.factory.FactoryBean;

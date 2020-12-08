@@ -1,9 +1,9 @@
-package com.github.firelcw.boot.config;
+package com.github.vizaizai.boot.config;
 
-import com.github.firelcw.client.AbstractClient;
-import com.github.firelcw.client.DefaultURLClient;
-import com.github.firelcw.codec.Decoder;
-import com.github.firelcw.codec.DefaultDecoder;
+import com.github.vizaizai.client.AbstractClient;
+import com.github.vizaizai.client.DefaultURLClient;
+import com.github.vizaizai.codec.Decoder;
+import com.github.vizaizai.codec.DefaultDecoder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

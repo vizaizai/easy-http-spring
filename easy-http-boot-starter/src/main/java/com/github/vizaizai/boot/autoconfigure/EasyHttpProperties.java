@@ -1,4 +1,4 @@
-package com.github.firelcw.boot.autoconfigure;
+package com.github.vizaizai.boot.autoconfigure;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
