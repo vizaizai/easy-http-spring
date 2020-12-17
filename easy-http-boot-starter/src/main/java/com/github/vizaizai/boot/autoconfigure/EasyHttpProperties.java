@@ -1,6 +1,7 @@
 package com.github.vizaizai.boot.autoconfigure;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.context.properties.NestedConfigurationProperty;
 
 import java.util.Map;
 
@@ -28,6 +29,11 @@ public class EasyHttpProperties {
      * 请求超时时间
      */
     private Integer requestTimeout = 15000;
+    /**
+     * 重试
+     */
+    @NestedConfigurationProperty
+    private RetryProperties retry;
 
 
     public String getBaseEndpoint() {
@@ -60,5 +66,13 @@ public class EasyHttpProperties {
 
     public void setRequestTimeout(Integer requestTimeout) {
         this.requestTimeout = requestTimeout;
+    }
+
+    public RetryProperties getRetry() {
+        return retry;
+    }
+
+    public void setRetry(RetryProperties retry) {
+        this.retry = retry;
     }
 }

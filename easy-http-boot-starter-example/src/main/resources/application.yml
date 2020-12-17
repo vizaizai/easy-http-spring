@@ -5,6 +5,10 @@ easy-http:
 #  base-endpoint: 127.0.0.1:8888
   base-endpoints:
     book: 127.0.0.1:8888
+  retry:
+    enable: true
+    max-attempts: 1
+    interval-time: 0
 
 
 logging:

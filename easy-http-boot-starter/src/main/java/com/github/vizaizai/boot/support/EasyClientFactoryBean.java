@@ -3,11 +3,13 @@ package com.github.vizaizai.boot.support;
 import com.github.vizaizai.EasyHttp;
 import com.github.vizaizai.boot.annotation.EasyHttpClient;
 import com.github.vizaizai.boot.autoconfigure.EasyHttpProperties;
+import com.github.vizaizai.boot.autoconfigure.RetryProperties;
 import com.github.vizaizai.client.AbstractClient;
 import com.github.vizaizai.codec.Decoder;
 import com.github.vizaizai.codec.Encoder;
 import com.github.vizaizai.interceptor.HttpInterceptor;
 import com.github.vizaizai.model.HttpRequestConfig;
+import com.github.vizaizai.retry.RetryTrigger;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.BeanInitializationException;
 import org.springframework.beans.factory.FactoryBean;
@@ -89,6 +91,14 @@ public class EasyClientFactoryBean<T> implements FactoryBean<T>, ApplicationCont
         }else {
             builder.decoder(this.decoder);
         }
+
+        // 重试
+        RetryProperties retryProperties = this.properties.getRetry();
+        if (retryProperties.isEnable()) {
+            builder.retryable(retryProperties.getMaxAttempts(), retryProperties.getIntervalTime(),
+                    this.applicationContext.getBean(RetryTrigger.class));
+        }
+
 
         // 构建http
         this.target = builder.build(this.interfaceType);

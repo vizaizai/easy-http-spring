@@ -26,7 +26,7 @@ public interface BookHttpService {
     ApiResult<List<Book>> listBooksByAuthor(@Var("author") String author);
 
     @Get("/books")
-    ApiResult<List<Book>> listBooksByAuthor(@Query Map<String, String> params);
+    ApiResult<List<Book>> listBooks();
 
     @Post("/books")
     void addBook(@Body Book book);

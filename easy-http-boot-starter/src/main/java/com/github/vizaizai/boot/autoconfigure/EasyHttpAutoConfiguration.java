@@ -10,6 +10,8 @@ import com.github.vizaizai.codec.Encoder;
 import com.github.vizaizai.interceptor.ErrorInterceptor;
 import com.github.vizaizai.interceptor.LogInterceptor;
 import com.github.vizaizai.model.HttpRequestConfig;
+import com.github.vizaizai.retry.DefaultRule;
+import com.github.vizaizai.retry.RetryTrigger;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -20,7 +22,7 @@ import org.springframework.context.annotation.Configuration;
  * @date 2020/8/1 19:16
  */
 @Configuration
-@EnableConfigurationProperties(EasyHttpProperties.class)
+@EnableConfigurationProperties({EasyHttpProperties.class})
 public class EasyHttpAutoConfiguration {
 
     @ConditionalOnMissingBean
@@ -58,4 +60,11 @@ public class EasyHttpAutoConfiguration {
         interceptorsBean.addInterceptor(new ErrorInterceptor());
         return interceptorsBean;
     }
+
+    @ConditionalOnMissingBean
+    @Bean
+    RetryTrigger retryTrigger() {
+        return new DefaultRule();
+    }
+
 }

@@ -19,4 +19,10 @@ public class DemoController {
     public Object foo() {
         return bookHttpService.getBookById("155664");
     }
+
+    @GetMapping("/listBooks")
+    public Object listBooks() {
+        return bookHttpService.listBooks();
+    }
+
 }
