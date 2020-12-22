@@ -94,7 +94,7 @@ public class EasyClientFactoryBean<T> implements FactoryBean<T>, ApplicationCont
 
         // 重试
         RetryProperties retryProperties = this.properties.getRetry();
-        if (retryProperties.isEnable()) {
+        if (retryProperties != null && retryProperties.isEnable()) {
             builder.retryable(retryProperties.getMaxAttempts(), retryProperties.getIntervalTime(),
                     this.applicationContext.getBean(RetryTrigger.class));
         }
