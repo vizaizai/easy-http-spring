@@ -38,7 +38,7 @@ public class EasyClientFactoryBean<T> implements FactoryBean<T>, ApplicationCont
     public EasyClientFactoryBean(Class<T> interfaceType) {
         this.interfaceType = interfaceType;
         if(interfaceType == null || !interfaceType.isInterface()) {
-            throw new IllegalArgumentException("annotated type by @NetClient must be a interface.");
+            throw new IllegalArgumentException("annotated type by @EasyHttpClient must be a interface.");
         }
 
     }

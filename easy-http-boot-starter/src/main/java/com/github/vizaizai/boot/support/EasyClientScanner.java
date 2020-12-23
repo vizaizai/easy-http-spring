@@ -10,7 +10,7 @@ import org.springframework.context.annotation.ClassPathBeanDefinitionScanner;
 
 import java.util.Set;
 
-/** NetClientScanner
+/** EasyHttpClientScanner
  *
  * @author liaochongwei
  * @date 2020/7/28 15:39
