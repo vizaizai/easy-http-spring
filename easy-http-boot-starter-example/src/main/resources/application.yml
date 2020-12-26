@@ -9,6 +9,7 @@ easy-http:
     enable: true
     max-attempts: 1
     interval-time: 0
+  request-log: false
 
 
 logging:

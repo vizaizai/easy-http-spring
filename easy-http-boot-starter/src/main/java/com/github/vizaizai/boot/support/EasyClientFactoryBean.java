@@ -8,6 +8,7 @@ import com.github.vizaizai.client.AbstractClient;
 import com.github.vizaizai.codec.Decoder;
 import com.github.vizaizai.codec.Encoder;
 import com.github.vizaizai.interceptor.HttpInterceptor;
+import com.github.vizaizai.interceptor.LogInterceptor;
 import com.github.vizaizai.model.HttpRequestConfig;
 import com.github.vizaizai.retry.RetryTrigger;
 import org.apache.commons.lang3.StringUtils;
@@ -63,6 +64,11 @@ public class EasyClientFactoryBean<T> implements FactoryBean<T>, ApplicationCont
                                         .encoder(encoder)
                                         .config(requestConfig)
                                         .url(url);
+
+        // 是否开启请求日志
+        if (properties.isRequestLog()) {
+            builder.withInterceptor(new LogInterceptor());
+        }
 
         // 全局拦截器
         for (HttpInterceptor interceptor : this.interceptorsBean.getInterceptors()) {

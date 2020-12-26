@@ -24,12 +24,12 @@ public @interface EasyHttpClient {
     Class<? extends HttpInterceptor>[] interceptors() default {};
     /**
      *
-     * @return 解码器类型
+     * @return 解码器类型(bean对象)
      */
     Class<? extends Decoder> decoder() default Decoder.class;
 
     /**
-     * @return 请求客户端类型
+     * @return 请求客户端类型(bean对象)
      */
     Class<? extends AbstractClient> client() default AbstractClient.class;
 

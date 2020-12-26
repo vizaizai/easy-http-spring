@@ -22,6 +22,10 @@ public class EasyHttpProperties {
      */
     private Map<String,String> baseEndpoints;
     /**
+     * 打印请求日志
+     */
+    private boolean requestLog = false;
+    /**
      * 连接超时时间
      */
     private Integer connectTimeout = 15000;
@@ -74,5 +78,13 @@ public class EasyHttpProperties {
 
     public void setRetry(RetryProperties retry) {
         this.retry = retry;
+    }
+
+    public boolean isRequestLog() {
+        return requestLog;
+    }
+
+    public void setRequestLog(boolean requestLog) {
+        this.requestLog = requestLog;
     }
 }

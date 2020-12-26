@@ -8,7 +8,6 @@ import com.github.vizaizai.codec.DefaultDecoder;
 import com.github.vizaizai.codec.DefaultEncoder;
 import com.github.vizaizai.codec.Encoder;
 import com.github.vizaizai.interceptor.ErrorInterceptor;
-import com.github.vizaizai.interceptor.LogInterceptor;
 import com.github.vizaizai.model.HttpRequestConfig;
 import com.github.vizaizai.retry.DefaultRule;
 import com.github.vizaizai.retry.RetryTrigger;
@@ -56,7 +55,6 @@ public class EasyHttpAutoConfiguration {
     @Bean
     InterceptorsBean interceptorsBean() {
         InterceptorsBean interceptorsBean = new InterceptorsBean();
-        interceptorsBean.addInterceptor(new LogInterceptor());
         interceptorsBean.addInterceptor(new ErrorInterceptor());
         return interceptorsBean;
     }
