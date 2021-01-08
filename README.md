@@ -30,7 +30,7 @@
 
 ``` yaml
 easy-http:
-  base-endpoint: 127.0.0.1:8080 默认请求地址
+  base-endpoint: 127.0.0.1:8080
   #base-endpoints: #按客户端名字定义请求地址。如@EasyHttpClient(value = "book"),这个接口将使用127.0.0.1:8888
     book: 127.0.0.1:8888
   retry:
