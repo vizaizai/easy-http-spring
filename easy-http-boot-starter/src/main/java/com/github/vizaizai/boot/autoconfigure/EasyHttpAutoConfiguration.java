@@ -4,9 +4,9 @@ import com.github.vizaizai.boot.support.InterceptorsBean;
 import com.github.vizaizai.client.AbstractClient;
 import com.github.vizaizai.client.ApacheHttpClient;
 import com.github.vizaizai.codec.Decoder;
-import com.github.vizaizai.codec.DefaultDecoder;
-import com.github.vizaizai.codec.DefaultEncoder;
 import com.github.vizaizai.codec.Encoder;
+import com.github.vizaizai.codec.JacksonDecoder;
+import com.github.vizaizai.codec.JacksonEncoder;
 import com.github.vizaizai.interceptor.ErrorInterceptor;
 import com.github.vizaizai.model.HttpRequestConfig;
 import com.github.vizaizai.retry.DefaultRule;
@@ -27,13 +27,13 @@ public class EasyHttpAutoConfiguration {
     @ConditionalOnMissingBean
     @Bean
     Decoder defaultDecoder() {
-        return new DefaultDecoder();
+        return new JacksonDecoder();
     }
 
     @ConditionalOnMissingBean
     @Bean
     Encoder encoder() {
-        return new DefaultEncoder();
+        return new JacksonEncoder();
     }
 
     @ConditionalOnMissingBean

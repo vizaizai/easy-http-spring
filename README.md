@@ -16,7 +16,7 @@
 <dependency>
   <groupId>com.github.vizaizai</groupId>
   <artifactId>easy-http-boot-starter</artifactId>
-  <version>1.5.7</version>
+  <version>1.5.8</version>
 </dependency>
    ```
 

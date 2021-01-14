@@ -3,7 +3,7 @@ package com.github.vizaizai.boot.config;
 import com.github.vizaizai.client.AbstractClient;
 import com.github.vizaizai.client.DefaultURLClient;
 import com.github.vizaizai.codec.Decoder;
-import com.github.vizaizai.codec.DefaultDecoder;
+import com.github.vizaizai.codec.JacksonDecoder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -16,7 +16,7 @@ public class EasyHttpConfig {
 
     @Bean
     Decoder myDecoder() {
-        return new DefaultDecoder();
+        return new JacksonDecoder();
     }
 
     @Bean

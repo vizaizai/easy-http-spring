@@ -5,7 +5,7 @@ import com.github.vizaizai.boot.annotation.EasyHttpClient;
 import com.github.vizaizai.boot.model.ApiResult;
 import com.github.vizaizai.boot.model.Book;
 import com.github.vizaizai.client.DefaultURLClient;
-import com.github.vizaizai.codec.DefaultDecoder;
+import com.github.vizaizai.codec.JacksonDecoder;
 
 import java.util.List;
 import java.util.Map;
@@ -14,7 +14,7 @@ import java.util.Map;
  * @author liaochongwei
  * @date 2020/8/3 10:27
  */
-@EasyHttpClient(value = "book", decoder = DefaultDecoder.class, client = DefaultURLClient.class)
+@EasyHttpClient(value = "book", decoder = JacksonDecoder.class, client = DefaultURLClient.class)
 public interface BookHttpService {
 
     @Get("/books/{id}")
