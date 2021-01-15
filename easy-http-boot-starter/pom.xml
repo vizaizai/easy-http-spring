@@ -5,7 +5,7 @@
     <parent>
         <artifactId>easy-http-spring</artifactId>
         <groupId>com.github.vizaizai</groupId>
-        <version>1.5.8</version>
+        <version>1.5.9</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -15,7 +15,7 @@
 
     <properties>
         <spring.boot.version>2.1.6.RELEASE</spring.boot.version>
-        <easy.http.version>3.2.3</easy.http.version>
+        <easy.http.version>3.2.4</easy.http.version>
     </properties>
 
     <dependencies>
