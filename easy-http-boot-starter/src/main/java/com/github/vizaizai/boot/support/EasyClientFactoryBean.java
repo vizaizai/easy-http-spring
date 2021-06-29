@@ -8,6 +8,7 @@ import com.github.vizaizai.client.AbstractClient;
 import com.github.vizaizai.codec.Decoder;
 import com.github.vizaizai.codec.Encoder;
 import com.github.vizaizai.entity.HttpRequestConfig;
+import com.github.vizaizai.hander.mapping.PathConverter;
 import com.github.vizaizai.interceptor.HttpInterceptor;
 import com.github.vizaizai.interceptor.LogInterceptor;
 import com.github.vizaizai.retry.RetryTrigger;
@@ -104,8 +105,9 @@ public class EasyClientFactoryBean<T> implements FactoryBean<T>, ApplicationCont
             builder.retryable(retryProperties.getMaxAttempts(), retryProperties.getIntervalTime(),
                     this.applicationContext.getBean(RetryTrigger.class));
         }
-
-
+        // 路径转化器
+        PathConverter pathConverter = this.applicationContext.getBean(PathConverter.class);
+        builder.pathConverter(pathConverter);
         // 构建http
         this.target = builder.build(this.interfaceType);
     }

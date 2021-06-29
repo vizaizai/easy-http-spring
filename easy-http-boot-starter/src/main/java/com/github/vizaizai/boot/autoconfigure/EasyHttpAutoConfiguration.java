@@ -1,5 +1,6 @@
 package com.github.vizaizai.boot.autoconfigure;
 
+import com.github.vizaizai.boot.support.EnvironmentPathConverter;
 import com.github.vizaizai.boot.support.InterceptorsBean;
 import com.github.vizaizai.client.AbstractClient;
 import com.github.vizaizai.client.ApacheHttpClient;
@@ -8,6 +9,7 @@ import com.github.vizaizai.codec.Encoder;
 import com.github.vizaizai.codec.JacksonDecoder;
 import com.github.vizaizai.codec.JacksonEncoder;
 import com.github.vizaizai.entity.HttpRequestConfig;
+import com.github.vizaizai.hander.mapping.PathConverter;
 import com.github.vizaizai.interceptor.ErrorInterceptor;
 import com.github.vizaizai.retry.DefaultRule;
 import com.github.vizaizai.retry.RetryTrigger;
@@ -15,6 +17,7 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.env.Environment;
 
 /**
  * @author 廖重威
@@ -48,6 +51,7 @@ public class EasyHttpAutoConfiguration {
         HttpRequestConfig config = new HttpRequestConfig();
         config.setConnectTimeout(properties.getConnectTimeout());
         config.setRequestTimeout(properties.getRequestTimeout());
+        config.setEncoding(properties.getEncoding());
         return config;
     }
 
@@ -63,6 +67,12 @@ public class EasyHttpAutoConfiguration {
     @Bean
     RetryTrigger retryTrigger() {
         return new DefaultRule();
+    }
+
+    @ConditionalOnMissingBean
+    @Bean
+    PathConverter pathConverter(Environment environment) {
+        return new EnvironmentPathConverter(environment);
     }
 
 }

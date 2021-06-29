@@ -1,7 +1,7 @@
 package com.github.vizaizai.boot.support;
 
 import com.github.vizaizai.boot.annotation.EnableEasyHttp;
-import org.apache.commons.collections.MapUtils;
+import com.github.vizaizai.util.VUtils;
 import org.springframework.context.annotation.ImportSelector;
 import org.springframework.core.type.AnnotationMetadata;
 import org.springframework.util.ClassUtils;
@@ -30,7 +30,7 @@ public class EasyClientSelector implements ImportSelector {
 
         Set<String> basePackages = new HashSet<>();
         String defaultPackageName = ClassUtils.getPackageName(importingClassMetadata.getClassName());
-        if (MapUtils.isEmpty(attributes)) {
+        if (VUtils.isEmpty(attributes)) {
             basePackages.add(defaultPackageName);
             return basePackages;
         }

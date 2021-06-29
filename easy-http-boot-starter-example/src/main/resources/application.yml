@@ -12,7 +12,18 @@ easy-http:
   request-log: false
 
 
+
+
 logging:
   level:
     root: info
     com.github.vizaizai: debug
+
+host:
+  system1: 127.0.0.1:8888
+  system2: 127.0.0.1:8889
+
+api:
+  addBooks: /books/{id}
+
+

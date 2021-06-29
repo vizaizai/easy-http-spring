@@ -3,6 +3,8 @@ package com.github.vizaizai.boot.autoconfigure;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.NestedConfigurationProperty;
 
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.Map;
 
 /**
@@ -33,6 +35,10 @@ public class EasyHttpProperties {
      * 请求超时时间
      */
     private Integer requestTimeout = 15000;
+    /**
+     * 字符编码
+     */
+    private Charset encoding = StandardCharsets.UTF_8;
     /**
      * 重试
      */
@@ -86,5 +92,13 @@ public class EasyHttpProperties {
 
     public void setRequestLog(boolean requestLog) {
         this.requestLog = requestLog;
+    }
+
+    public Charset getEncoding() {
+        return encoding;
+    }
+
+    public void setEncoding(Charset encoding) {
+        this.encoding = encoding;
     }
 }

@@ -1,6 +1,7 @@
 package com.github.vizaizai.boot.config;
 
 import com.github.vizaizai.client.AbstractClient;
+import com.github.vizaizai.client.ApacheHttpClient;
 import com.github.vizaizai.client.DefaultURLClient;
 import com.github.vizaizai.codec.Decoder;
 import com.github.vizaizai.codec.JacksonDecoder;
@@ -21,6 +22,6 @@ public class EasyHttpConfig {
 
     @Bean
     AbstractClient client() {
-        return DefaultURLClient.getInstance();
+        return ApacheHttpClient.getInstance();
     }
 }
