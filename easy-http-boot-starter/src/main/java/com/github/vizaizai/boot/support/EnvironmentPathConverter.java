@@ -53,6 +53,10 @@ public class EnvironmentPathConverter implements PathConverter {
                 len ++;
             }
         }
+        // 无需替换，直接返回字符串
+        if (len == 0) {
+            return value;
+        }
 
         // spEl解析器
         ExpressionParser parser = new SpelExpressionParser();

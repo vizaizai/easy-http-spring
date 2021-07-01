@@ -7,7 +7,7 @@
     <groupId>com.github.vizaizai</groupId>
     <artifactId>easy-http-spring</artifactId>
     <packaging>pom</packaging>
-    <version>1.6.2</version>
+    <version>1.6.3</version>
     <name>easy-http-spring</name>
     <url>https://github.com/vizaizai/easy-http-spring</url>
     <description>Springboot starter for easy-http</description>

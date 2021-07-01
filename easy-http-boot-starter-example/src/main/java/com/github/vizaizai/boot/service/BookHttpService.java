@@ -17,7 +17,8 @@ import java.util.Map;
 @EasyHttpClient(decoder = JacksonDecoder.class, client = ApacheHttpClient.class)
 public interface BookHttpService {
 
-    @Get("'http://' + ${host.system2} + ${api.addBooks}")
+    //@Get("'http://' + ${host.system2} + ${api.addBooks}")
+    @Get("/books/{id}")
     ApiResult<Book> getBookById(@Var String id);
 
     @Get("/books?author={author}")
