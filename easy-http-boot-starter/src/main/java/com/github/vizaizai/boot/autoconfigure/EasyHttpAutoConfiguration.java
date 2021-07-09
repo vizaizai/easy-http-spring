@@ -2,6 +2,7 @@ package com.github.vizaizai.boot.autoconfigure;
 
 import com.github.vizaizai.boot.support.EnvironmentPathConverter;
 import com.github.vizaizai.boot.support.InterceptorsBean;
+import com.github.vizaizai.boot.support.SpringInterceptorGenerator;
 import com.github.vizaizai.client.AbstractClient;
 import com.github.vizaizai.client.ApacheHttpClient;
 import com.github.vizaizai.codec.Decoder;
@@ -11,6 +12,7 @@ import com.github.vizaizai.codec.JacksonEncoder;
 import com.github.vizaizai.entity.HttpRequestConfig;
 import com.github.vizaizai.hander.mapping.PathConverter;
 import com.github.vizaizai.interceptor.ErrorInterceptor;
+import com.github.vizaizai.interceptor.InterceptorGenerator;
 import com.github.vizaizai.retry.DefaultRule;
 import com.github.vizaizai.retry.RetryTrigger;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
@@ -73,6 +75,12 @@ public class EasyHttpAutoConfiguration {
     @Bean
     PathConverter pathConverter(Environment environment) {
         return new EnvironmentPathConverter(environment);
+    }
+
+    @ConditionalOnMissingBean
+    @Bean
+    InterceptorGenerator interceptorGenerator() {
+        return new SpringInterceptorGenerator();
     }
 
 }

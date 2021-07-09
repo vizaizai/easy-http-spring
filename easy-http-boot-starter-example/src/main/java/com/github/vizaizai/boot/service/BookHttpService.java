@@ -2,6 +2,7 @@ package com.github.vizaizai.boot.service;
 
 import com.github.vizaizai.annotation.*;
 import com.github.vizaizai.boot.annotation.EasyHttpClient;
+import com.github.vizaizai.boot.config.HelloInterceptor;
 import com.github.vizaizai.boot.model.ApiResult;
 import com.github.vizaizai.boot.model.Book;
 import com.github.vizaizai.client.ApacheHttpClient;
@@ -14,11 +15,11 @@ import java.util.Map;
  * @author liaochongwei
  * @date 2020/8/3 10:27
  */
-@EasyHttpClient(decoder = JacksonDecoder.class, client = ApacheHttpClient.class)
+@EasyHttpClient(decoder = JacksonDecoder.class, client = ApacheHttpClient.class, value = "book")
 public interface BookHttpService {
 
     //@Get("'http://' + ${host.system2} + ${api.addBooks}")
-    @Get("/books/{id}")
+    @Get(value = "/books/{id}", interceptors = HelloInterceptor.class)
     ApiResult<Book> getBookById(@Var String id);
 
     @Get("/books?author={author}")
