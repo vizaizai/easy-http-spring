@@ -1,5 +1,6 @@
 package com.github.vizaizai.boot.autoconfigure;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.vizaizai.boot.support.EnvironmentPathConverter;
 import com.github.vizaizai.boot.support.InterceptorsBean;
 import com.github.vizaizai.boot.support.SpringInterceptorGenerator;
@@ -15,11 +16,13 @@ import com.github.vizaizai.interceptor.ErrorInterceptor;
 import com.github.vizaizai.interceptor.InterceptorGenerator;
 import com.github.vizaizai.retry.DefaultRule;
 import com.github.vizaizai.retry.RetryTrigger;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
+import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 
 /**
  * @author 廖重威
@@ -29,16 +32,18 @@ import org.springframework.core.env.Environment;
 @EnableConfigurationProperties({EasyHttpProperties.class})
 public class EasyHttpAutoConfiguration {
 
+    @ConditionalOnClass({Jackson2ObjectMapperBuilder.class})
     @ConditionalOnMissingBean
     @Bean
-    Decoder defaultDecoder() {
-        return new JacksonDecoder();
+    Decoder springJacksonDecoder(ObjectMapper objectMapper) {
+        return new JacksonDecoder(objectMapper);
     }
 
+    @ConditionalOnClass({Jackson2ObjectMapperBuilder.class})
     @ConditionalOnMissingBean
     @Bean
-    Encoder encoder() {
-        return new JacksonEncoder();
+    Encoder springJacksonEncoder(ObjectMapper objectMapper) {
+        return new JacksonEncoder(objectMapper);
     }
 
     @ConditionalOnMissingBean

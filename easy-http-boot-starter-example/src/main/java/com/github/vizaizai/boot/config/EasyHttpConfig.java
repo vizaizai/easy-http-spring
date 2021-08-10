@@ -15,10 +15,10 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class EasyHttpConfig {
 
-    @Bean
-    Decoder myDecoder() {
-        return new JacksonDecoder();
-    }
+//    @Bean
+//    Decoder myDecoder() {
+//        return new JacksonDecoder();
+//    }
 
     @Bean
     AbstractClient client() {
