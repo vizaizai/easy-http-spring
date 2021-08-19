@@ -1,10 +1,14 @@
 package com.github.vizaizai.boot.support;
 
+import com.github.vizaizai.exception.EasyHttpException;
+import com.github.vizaizai.interceptor.DefaultInterceptorGenerator;
 import com.github.vizaizai.interceptor.HttpInterceptor;
 import com.github.vizaizai.interceptor.InterceptorGenerator;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+
+import java.util.Map;
 
 /**
  * @author liaochongwei
@@ -15,7 +19,14 @@ public class SpringInterceptorGenerator implements InterceptorGenerator,Applicat
     private ApplicationContext applicationContext;
     @Override
     public HttpInterceptor get(Class<? extends HttpInterceptor> clazz) {
-        return applicationContext.getBean(clazz);
+        Map<String, ? extends HttpInterceptor> beansOfType = applicationContext.getBeansOfType(clazz);
+        if (beansOfType.isEmpty()) {
+            return DefaultInterceptorGenerator.getGenerator().get(clazz);
+        }
+        if (beansOfType.size() > 1) {
+            throw new EasyHttpException(clazz.getTypeName() + " required a single bean, but 2 were found.");
+        }
+        return beansOfType.entrySet().iterator().next().getValue();
     }
 
     @Override

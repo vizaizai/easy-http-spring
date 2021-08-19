@@ -72,12 +72,17 @@ public class EasyClientFactoryBean<T> implements FactoryBean<T>, ApplicationCont
             builder.withInterceptor(new LogInterceptor());
         }
 
+        // 拦截生产器
+        InterceptorGenerator interceptorGenerator = this.applicationContext.getBean(InterceptorGenerator.class);
+        builder.interceptorGenerator(interceptorGenerator);
+
         // 全局拦截器
         for (HttpInterceptor interceptor : this.interceptorsBean.getInterceptors()) {
             builder.withInterceptor(interceptor);
         }
+
         // 注解上的拦截器
-        List<HttpInterceptor> httpInterceptors = Utils.createHttpInterceptors(annotation.interceptors());
+        List<HttpInterceptor> httpInterceptors = Utils.createHttpInterceptors(annotation.interceptors(), interceptorGenerator);
         for (HttpInterceptor interceptor : httpInterceptors) {
             builder.withInterceptor(interceptor);
         }
@@ -109,10 +114,6 @@ public class EasyClientFactoryBean<T> implements FactoryBean<T>, ApplicationCont
         // 路径转化器
         PathConverter pathConverter = this.applicationContext.getBean(PathConverter.class);
         builder.pathConverter(pathConverter);
-
-        // 拦截生产器
-        InterceptorGenerator interceptorGenerator = this.applicationContext.getBean(InterceptorGenerator.class);
-        builder.interceptorGenerator(interceptorGenerator);
 
         // 构建http
         this.target = builder.build(this.interfaceType);
