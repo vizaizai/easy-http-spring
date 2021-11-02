@@ -69,7 +69,7 @@ public class EasyClientFactoryBean<T> implements FactoryBean<T>, ApplicationCont
 
         // 是否开启请求日志
         if (properties.isRequestLog()) {
-            builder.withInterceptor(new LogInterceptor());
+            builder.withInterceptor(new LogInterceptor(properties.getLogItemPrefix(), properties.getLogItemSuffix()));
         }
 
         // 拦截生产器

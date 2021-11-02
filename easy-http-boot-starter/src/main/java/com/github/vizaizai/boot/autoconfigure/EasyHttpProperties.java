@@ -28,6 +28,14 @@ public class EasyHttpProperties {
      */
     private boolean requestLog = false;
     /**
+     * 请求日志项前缀
+     */
+    private String logItemPrefix = System.lineSeparator() + "> ";
+    /**
+     * 请求日志项后缀
+     */
+    private String logItemSuffix = "";
+    /**
      * 连接超时时间
      */
     private Integer connectTimeout = 15000;
@@ -92,6 +100,22 @@ public class EasyHttpProperties {
 
     public void setRequestLog(boolean requestLog) {
         this.requestLog = requestLog;
+    }
+
+    public String getLogItemPrefix() {
+        return logItemPrefix;
+    }
+
+    public void setLogItemPrefix(String logItemPrefix) {
+        this.logItemPrefix = logItemPrefix;
+    }
+
+    public String getLogItemSuffix() {
+        return logItemSuffix;
+    }
+
+    public void setLogItemSuffix(String logItemSuffix) {
+        this.logItemSuffix = logItemSuffix;
     }
 
     public Charset getEncoding() {
