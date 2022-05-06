@@ -6,9 +6,10 @@
 
 ##### 1. 版本说明
 
-| 项目 | easy-http-boot | spring-boot |
+| 项目 | easy-http-spring | spring-boot |
 | ---- | -------------- | ----------- |
-| 版本 | 1.X            | 2.1.X+      |
+| 版本 | 1.1.X            | 2.1.X+      |
+| 版本 | 1.7.X            | 2.2.X+      |
 
 ##### 2. 安装
 
@@ -16,7 +17,7 @@
 <dependency>
   <groupId>com.github.vizaizai</groupId>
   <artifactId>easy-http-boot-starter</artifactId>
-  <version>1.6.10</version>
+  <version>1.7.0</version>
 </dependency>
    ```
 
