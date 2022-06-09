@@ -12,7 +12,7 @@
     <artifactId>esay-http-boot-starter-example</artifactId>
 
     <properties>
-        <spring.boot.version>2.2.2.RELEASE</spring.boot.version>
+        <spring.boot.version>2.5.12</spring.boot.version>
         <maven.deploy.skip>true</maven.deploy.skip>
     </properties>
     <dependencies>
